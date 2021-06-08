@@ -42,7 +42,7 @@ app.get('/about', (req, res) => {
 app.get('/help', (req, res) => {
     res.render('help', {
         title: "Help Page",
-        message: "This is an example message",
+        message: "To use this app, simply write a location in the input box and click search to know the current weather of that place!",
         name
     })
 })
