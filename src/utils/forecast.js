@@ -1,9 +1,10 @@
 const request = require('postman-request')
+const keys = require('../keys/keys.js')
 
 // destructuring response parameter object
 const forecast = ({longitude, latitude, location: geocodeLocation} = coordinates, callback) => {
 
-    const weather_access_key = '9753c32e6eaa33f7142c6d93eae9319b'
+    const weather_access_key = keys.forecast_access_key
     const weatherCoordinates = `${latitude},${longitude}`
 
     const weatherUrl = `http://api.weatherstack.com/current?access_key=${weather_access_key}&query=${weatherCoordinates}`
