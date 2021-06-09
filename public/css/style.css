@@ -92,3 +92,8 @@ header a:hover{
     border-bottom: 2px solid #333;
 }
 
+.forecast,
+.location{
+    margin-left: 3%;
+    margin-top: 0px;
+}

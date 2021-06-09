@@ -19,9 +19,11 @@ const forecast = ({longitude, latitude, location: geocodeLocation} = coordinates
         else{
 
             // Variable declaration from the response object
-            const {temperature, feelslike: feelsLike, weather_descriptions: weatherDescription} = body.current
+            const {temperature, feelslike: feelsLike, weather_descriptions: weatherDescription, wind_speed: windSpeed, humidity, uv_index: uvIndex, visibility} = body.current
 
-            callback(undefined, `${weatherDescription[0]}. It's currently ${temperature}C˚ degrees out. It feels like ${feelsLike}C˚ out in ${geocodeLocation}.`)
+            const forecastResponse = `<strong>Forecast:</strong> ${weatherDescription[0]}.<br><strong>Temperature:</strong> ${temperature}C˚.<br><strong>Real feel:</strong> ${feelsLike}C˚.<br><strong>Wind speed:</strong> ${windSpeed} Km/h.<br><strong>Humidity:</strong> ${humidity}%.<br><strong>UV Index:</strong> ${uvIndex}.<br><strong>Visibility:</strong> ${visibility} Km.<br><strong>Location:</strong> ${geocodeLocation}.`
+            
+            callback(undefined, forecastResponse)
         }
     })
 }

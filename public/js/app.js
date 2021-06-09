@@ -16,7 +16,7 @@ form.addEventListener('submit', (e) => {
             input.value = ''
         }
         else{
-            forecastLabel.innerText = res.data
+            forecastLabel.innerHTML = res.data
             locationLabel.innerText = res.address
             input.value = ''
         }
